@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router";
-import { checking } from "../PureFunctions/LoginCheck";
+import { checking, logout } from "../PureFunctions/LoginCheck";
 
 const Login = ({ setUser, user }) => {
   const [email, setEmail] = useState("");

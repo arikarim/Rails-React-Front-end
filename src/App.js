@@ -5,6 +5,7 @@ import Login from "./components/Login";
 import Nav from "./components/Nav";
 import Signup from "./components/Signup";
 import Home from "./components/Home";
+import Logout from "./components/Logout";
 
 function App() {
   const [token, setToken] = useState("");
@@ -22,30 +23,35 @@ function App() {
     // console.log(data);
     const toke = JSON.parse(localStorage.getItem("token"));
     setToken(toke);
+    console.log(toke);
 
-    if (token) {
-      const dataa = await axios.get(
-        "https://afternoon-coast-71095.herokuapp.com/member",
-        {
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: token,
-          },
-        }
-      );
-      if (dataa.data.message === "Yeppa You did it") {
-        setUser("Logged");
+    if (token !== '') {
+      try {
+        const dataa = await axios.get(
+          "https://afternoon-coast-71095.herokuapp.com/member",
+          {
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: token,
+            },
+          }
+        );
+        dataa.data.message === "Yeppa You did it"
+          ? setUser("Logged")
+          : setUser("Not_Logged");
+        console.log(user);
+      } catch (e) {
+        console.log(e);
       }
-      console.log(dataa.data.message);
     }
   };
 
   useEffect(() => {
     fetchData();
-  }, [token]);
+  }, [token, user]);
   return (
     <Router>
-      <Nav user={user} />
+      <Nav user={user} setToken={setToken} setUser={setUser} />
       <div className="container">
         <h1>Status: {user === "Logged" ? "Logged in" : "Not Logged in"}</h1>
         <Switch>
@@ -64,18 +70,27 @@ function App() {
             exact
             path="/login"
             render={(props) => (
-              <Login
-                {...props}
-                user={user}
-                setToken={setToken}
-                setUser={setUser}
-              />
+              <Login {...props} user={user} setUser={setUser} />
             )}
           />
+          {/* <Route
+            exact
+            path="/logout"
+            render={(props) => (
+              <Logout
+                {...props}
+                token={token}
+                user={user}
+                setUser={setUser}
+                setToken={setToken}
+              />
+            )}
+          /> */}
+
           <Route
             exact
             path="/"
-            render={(props) => <Home {...props} user={user} />}
+            render={(props) => <Home {...props} user={user} setUser={setUser} />}
           />
         </Switch>
       </div>

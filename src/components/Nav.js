@@ -1,10 +1,13 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import axios from "axios";
+import React, { useEffect } from "react";
+import { Link, useHistory } from "react-router-dom";
+import { checking, logout } from "../PureFunctions/LoginCheck";
 
-const Nav = ({ status }) => {
+const Nav = ({ user}) => {
+
   return (
     <nav className="bg-dark">
-      {status === false ? (
+      {user === 'Not_Logged' ? (
         <ul className="list-unstyled d-flex py-3 justify-content-end">
           <li className="mx-3">
             <Link to="/signup">Sign Up</Link>
@@ -21,6 +24,9 @@ const Nav = ({ status }) => {
           <li className="mx-3">
             <Link to="/dashboard">Dashboard</Link>
           </li>
+          {/* <li className="mx-3">
+            <button onClick={logout}>Log out</button>
+          </li> */}
         </ul>
       )}
     </nav>
