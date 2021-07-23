@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { BrowserRouter as Router, Switch, Route, useHistory } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import Login from './components/Login';
 import Nav from './components/Nav';
