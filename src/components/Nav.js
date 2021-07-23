@@ -1,10 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Nav = ({ status }) => {
   return (
     <nav className="bg-dark">
-      {status == false ? (
+      {status === false ? (
         <ul className="list-unstyled d-flex py-3 justify-content-end">
           <li className="mx-3">
             <Link to="/signup">Sign Up</Link>

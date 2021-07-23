@@ -1,22 +1,18 @@
-import React, { useEffect } from 'react'
-import { useHistory } from 'react-router';
+import React, { useEffect } from "react";
+import { useHistory } from "react-router";
+import { checking } from "../PureFunctions/LoginCheck";
 
-const Home = ({user}) => {
+const Home = ({ user }) => {
   const history = useHistory();
-  
-  const checking = () => {
-  user == 'Not_Logged' ? history.push('/login', { from: "HomePage" }) : history.push('/')
 
-    console.log(user);
-  }
   useEffect(() => {
-    checking();
-  }, [user])
+    checking(user, history);
+  }, [user, history]);
   return (
     <div>
       <h1>Welcome to our website</h1>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
