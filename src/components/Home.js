@@ -5,7 +5,7 @@ import { checking } from "../PureFunctions/LoginCheck";
 
 const Home = ({ user, setUser }) => {
   const history = useHistory();
-  const logout = async (setUser, user, history) => { 
+  const logout = async () => { 
     try {
       const toke = JSON.parse(localStorage.getItem("token"));
       const data = await axios.delete(
@@ -20,24 +20,25 @@ const Home = ({ user, setUser }) => {
       // localStorage.setItem("token", "");
       console.log(data.data.message);
       localStorage.setItem("token", JSON.stringify(""));
-      data.data.message === "You are logged out."
-        ? setUser("Not Logged") 
-        : setUser("Not Logged");
-        data.message === "You are logged out."
-        ? history.push("/login")
-        : history.push("/");
-      console.log(user)
+      setUser('Not Logged')
+      history.push("/login");
+      // console.log(user)
     } catch (error) {
       console.log(error);
     }
   };
 
   useEffect(() => {
-    checking(user, history);
-  }, [user, history]);
+    // checking(user, history);
+    setTimeout(() => {
+      checking(user, history);
+      // history.push("/login");
+    }, 1000);
+  }, []);
   return (
     <div>
       <h1>Welcome to our website</h1>
+      <p>{user}</p>
       <button onClick={e =>logout(setUser,user,history)}>log out</button>
 
     </div>

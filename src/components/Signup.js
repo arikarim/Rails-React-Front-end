@@ -23,9 +23,9 @@ const Signup = ({ setUser }) => {
       data.data.message === "Signed up sucessfully."
         ? setUser("Logged")
         : setUser("Not Logged");
-      data.data.message === "You are logged in."
-        ? history.goBack()
-        : history.push("/login");
+      // data.data.message === "You are logged in."
+      //   ? history.goBack()
+      //   : history.push("/login");
     } catch (error) {
       console.log(error);
     }

@@ -23,7 +23,6 @@ function App() {
     // console.log(data);
     const toke = JSON.parse(localStorage.getItem("token"));
     setToken(toke);
-    console.log(toke);
 
     if (token !== '') {
       try {

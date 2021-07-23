@@ -24,17 +24,15 @@ const Login = ({ setUser, user }) => {
       data.data.message === "You are logged in."
         ? setUser("Logged")
         : setUser("Not Logged");
-      data.data.message === "You are logged in."
-        ? history.goBack()
-        : history.push("/login");
+        history.push("/");
     } catch (error) {
       console.log(error);
     }
   };
 
   useEffect(() => {
-    checking(user, history);
-  }, [user, history])
+    // checking(user, history);
+  }, [user])
   return (
     <form
       onSubmit={handleSubmit}
