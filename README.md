@@ -49,7 +49,7 @@ In order to use this project you should have the back end prepared, I will put t
 
 - Clone the Rails repo and cd inside the project.
 
-- Run `Rake secret` and keep hold it for the next step.
+- Run `Rake secret` and hold it for the next step.
 
 - Create a `.env` file in the root of the project and inside it put this `DEVISE_JWT_SECRET_KEY = < your secret key from previuos step >`
 
