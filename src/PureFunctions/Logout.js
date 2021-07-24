@@ -4,7 +4,6 @@ export const checking = (user, history) => {
   user === "Not_Logged"
     ? history.push("/login")
     : history.push("/");
-    console.log(user);
 };
 
 export const logout = async (setUser, history) => { 
@@ -19,7 +18,6 @@ export const logout = async (setUser, history) => {
         },
       }
     );
-    console.log(data.data.message);
     localStorage.setItem("token", JSON.stringify(""));
     setUser('Not Logged')
     history.push("/login");

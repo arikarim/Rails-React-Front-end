@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
-import { logout } from "../PureFunctions/LoginCheck";
+import { logout } from "../PureFunctions/Logout";
 import "./Nav.css";
 const Nav = ({ setUser, user }) => {
   const history = useHistory();
