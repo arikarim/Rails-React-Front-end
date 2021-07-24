@@ -36,7 +36,7 @@ function App() {
 
   useEffect(() => {
     fetchData();
-    console.log(token);
+    // eslint-disable-next-line
   }, [token, user]);
   return (
     <div>

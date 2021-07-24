@@ -15,7 +15,6 @@ const Nav = ({ setUser, user }) => {
               Sign Up
             </Link>
           </li>
-          {user}
           <li className="mx-3">
             <Link className="text-decoration-none link-light" to="/login">
               Login
@@ -24,15 +23,9 @@ const Nav = ({ setUser, user }) => {
         </ul>
       ) : (
         <ul className="list-unstyled d-flex py-3 justify-content-end">
-          {user}
           <li className="mx-3">
             <Link className="text-decoration-none link-light" to="/">
               Home
-            </Link>
-          </li>
-          <li className="mx-3">
-            <Link className="text-decoration-none link-light" to="/">
-              {user}
             </Link>
           </li>
           <li className="mx-3">

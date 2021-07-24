@@ -1,24 +1,15 @@
-import axios from "axios";
-import React, { useEffect } from "react";
-import { Redirect, useHistory } from "react-router";
+import React from "react";
+import { Redirect } from "react-router";
 
-
-const Home = ({token, user, setUser }) => {
-
-  const history = useHistory();
-  console.log(user);
-  if (user === 'Not_Logged') {
+const Home = ({ user }) => {
+  if (user === "Not_Logged") {
     return <Redirect to={"/login"} />;
   }
-  // useEffect(() => {
-  //   // checking(user, history);
-  // }, [user, history]);
   return (
     <div>
       <h1>Welcome to our website</h1>
       <p>{user}</p>
       {/* <button onClick={e =>logout(e)}>log out</button> */}
-
     </div>
   );
 };

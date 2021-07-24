@@ -1,10 +1,7 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { Redirect, Route, useHistory } from "react-router";
-import { BrowserRouter as Router } from "react-router-dom";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Redirect, useHistory } from "react-router";
 import "./registration.css";
-// import { checking, logout } from "../PureFunctions/LoginCheck";
 
 const Login = ({ setUser, user }) => {
   const [email, setEmail] = useState("");
