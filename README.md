@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# React-Rails Authentication Front-End
+<p align="center">
+    <img src="src/images/react.png" alt="Logo" width="80" height="80">
+  <h3 align="center">React-Rails --> [React]</h3>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  <p align="center">
+This is prepared React authentication `part of React-Rails authentication` where components and complete logic are built and ready to use.
+  </p>
+</p
 
-## Available Scripts
 
-In the project directory, you can run:
+## Screenshots of the app.
 
-### `yarn start`
+![image](./src/images/screen.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
+[Live Demo Link](https://60d9c0abccc45700086d7eec--epic-kilby-a23fc8.netlify.app/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Built With
 
-### `yarn build`
+- React
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Bootstrap
+ 
+- Css
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Prerequisities
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+node should be installed in your machine.
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Getting Started
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**To get this project set up on your local machine, follow these simple steps:**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**Step 1 React-part**<br>
+ - Clone the repo to your local machine.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+ - cd inside the project directory.
 
-## Learn More
+  - npm install
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+ - run npm run start
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Step 2 Rails Part**<br>
 
-### Code Splitting
+In order to use this project you should have the back end prepared, I will put the link to the Rails back-end [Here](https://www.linkedin.com/in/ari-karim-523bb81b3) and all you have to to is follow these simple : 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Clone the Rails repo and cd inside the project.
 
-### Analyzing the Bundle Size
+- Run `Rake secret` and keep hold it for the next step.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Create a `.env` file in the root of the project and inside it put this `DEVISE_JWT_SECRET_KEY = < your secret key from previuos step >`
 
-### Making a Progressive Web App
+- Inside `config/initializers/cors.rb` if you it locally you dont need to do this but if you want to use it from specific domain you should change line 12 from `origins '*'` to `origins 'Your domain here'`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+## 🤝 contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Author
 
-### Deployment
+- GitHub: [@arikarim](https://github.com/arikarim)
+- LinkedIn: [AriKarim](https://www.linkedin.com/in/ari-karim-523bb81b3)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🙋‍♂ show your support
 
-### `yarn build` fails to minify
+give a ⭐️ if you like this project!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📝 license
+
+
+
+This project is [MIT](lisenced)
