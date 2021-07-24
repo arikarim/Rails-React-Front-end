@@ -35,6 +35,9 @@ const Signup = ({ setUser }) => {
       onSubmit={handleSubmit}
       className="my-5 d-flex flex-column  col-8 mx-auto"
     >
+      <label htmlFor="email" className="col-form-label">
+        Email
+      </label>
       <input
         onChange={(e) => setEmail(e.target.value)}
         name="email"
@@ -42,6 +45,10 @@ const Signup = ({ setUser }) => {
         type="email"
         placeholder="email"
       />
+      <label htmlFor="password" className="col-form-label">
+        Password
+      </label>
+
       <input
         onChange={(e) => setPassword(e.target.value)}
         name="password"
@@ -49,7 +56,7 @@ const Signup = ({ setUser }) => {
         type="password"
         placeholder="password"
       />
-      <button className="my-2 w-50" type="submit">
+      <button className="my-2 btn btn-dark" type="submit">
         Sign up
       </button>
     </form>

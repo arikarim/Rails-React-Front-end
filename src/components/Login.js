@@ -1,7 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router";
-import { checking, logout } from "../PureFunctions/LoginCheck";
+import { Route, useHistory } from "react-router";
+import {BrowserRouter as Router} from "react-router-dom";
+import { Link } from "react-router-dom";
+import { checking } from "../PureFunctions/LoginCheck";
+// import { checking, logout } from "../PureFunctions/LoginCheck";
 
 const Login = ({ setUser, user }) => {
   const [email, setEmail] = useState("");
@@ -24,7 +27,7 @@ const Login = ({ setUser, user }) => {
       data.data.message === "You are logged in."
         ? setUser("Logged")
         : setUser("Not Logged");
-        history.push("/");
+      history.push("/");
     } catch (error) {
       console.log(error);
     }
@@ -32,12 +35,14 @@ const Login = ({ setUser, user }) => {
 
   useEffect(() => {
     // checking(user, history);
-  }, [user])
+  }, [user, history]);
   return (
+    <Router>
     <form
       onSubmit={handleSubmit}
       className="my-5 d-flex flex-column  col-8 mx-auto"
     >
+      <label htmlFor="email" className="col-form-label">Email</label>
       <input
         onChange={(e) => setEmail(e.target.value)}
         name="email"
@@ -45,6 +50,7 @@ const Login = ({ setUser, user }) => {
         type="email"
         placeholder="email"
       />
+      <label htmlFor="password" className="col-form-label">Password</label>
       <input
         onChange={(e) => setPassword(e.target.value)}
         name="password"
@@ -52,10 +58,12 @@ const Login = ({ setUser, user }) => {
         type="password"
         placeholder="password"
       />
-      <button className="my-2 w-50" type="submit">
+      <button className="my-2 btn btn-dark" type="submit">
         Log in
       </button>
+      <Link className="text-decoration-none link-dark" to="/signup">Sign Up</Link>
     </form>
+    </Router>
   );
 };
 

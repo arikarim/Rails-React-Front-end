@@ -11,16 +11,7 @@ function App() {
   const [token, setToken] = useState("");
   const [user, setUser] = useState("Not_Logged");
 
-  const fetchData = async () => {
-    // const data = await axios.post('https://afternoon-coast-71095.herokuapp.com/users/sign_in',
-    // {
-    //   "user": {
-    //     "email": "ttestt@example.com",
-    //     "password": "12345678"
-    //   }
-    // }
-    //   );
-    // console.log(data);
+    const fetchData = async () => {
     const toke = JSON.parse(localStorage.getItem("token"));
     setToken(toke);
 
@@ -38,7 +29,6 @@ function App() {
         dataa.data.message === "Yeppa You did it"
           ? setUser("Logged")
           : setUser("Not_Logged");
-        console.log(user);
       } catch (e) {
         console.log(e);
       }
@@ -47,6 +37,7 @@ function App() {
 
   useEffect(() => {
     fetchData();
+    console.log(token);
   }, [token, user]);
   return (
     <Router>
@@ -89,7 +80,7 @@ function App() {
           <Route
             exact
             path="/"
-            render={(props) => <Home {...props} user={user} setUser={setUser} />}
+            render={(props) => <Home token={token} {...props} user={user} setUser={setUser} />}
           />
         </Switch>
       </div>

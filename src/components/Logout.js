@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { useHistory } from "react-router";
 import { checking } from "../PureFunctions/LoginCheck";
 
-const Logout = ({user, setUser, setToken }) => {
+const Logout = ({ user, setUser, setToken }) => {
   const history = useHistory();
 
   const logout = async () => {
@@ -18,14 +18,16 @@ const Logout = ({user, setUser, setToken }) => {
           },
         }
       );
-      // setToken(null);
+
       console.log(data.data.message);
       localStorage.setItem("token", JSON.stringify(""));
       data.data.message === "You are logged out."
-        ? setUser("Not Logged") 
+        ? setUser("Not Logged")
         : setUser("Not Logged");
-      data.data.message === "You are logged out." ? checking(user, history) : checking( user, history);
-      console.log(user)
+      data.data.message === "You are logged out."
+        ? checking(user, history)
+        : checking(user, history);
+      console.log(user);
     } catch (error) {
       console.log(error);
     }
@@ -33,7 +35,7 @@ const Logout = ({user, setUser, setToken }) => {
 
   useEffect(() => {
     logout();
-    
+
     // eslint-disable-next-line
   }, []);
   return <div></div>;
