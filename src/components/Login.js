@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Route, useHistory } from "react-router";
+import { Redirect, Route, useHistory } from "react-router";
 import {BrowserRouter as Router} from "react-router-dom";
 import { Link } from "react-router-dom";
 import { checking } from "../PureFunctions/LoginCheck";
@@ -32,10 +32,10 @@ const Login = ({ setUser, user }) => {
       console.log(error);
     }
   };
+  if (user === 'Logged') {
+    return <Redirect to={"/"} />;
+  }
 
-  useEffect(() => {
-    // checking(user, history);
-  }, [user, history]);
   return (
     <Router>
     <form

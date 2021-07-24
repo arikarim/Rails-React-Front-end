@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link, Redirect, useHistory } from "react-router-dom";
 import { checking, logout } from "../PureFunctions/LoginCheck";
 
 const Nav = ({setUser, user}) => {
@@ -20,7 +20,11 @@ const Nav = ({setUser, user}) => {
       console.log(data.data.message);
       localStorage.setItem("token", JSON.stringify(""));
       setUser('Not Logged')
-      // history.push("/login");
+      console.log(user);
+      // if (data.data.message !== 'You are logged out.') {
+      //   return <Redirect to={"/login"} />;
+      // }
+      history.push("/login");
 
 
     } catch (error) {

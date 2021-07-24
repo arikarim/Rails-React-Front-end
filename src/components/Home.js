@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect } from "react";
 import { Redirect, useHistory } from "react-router";
-import { checking } from "../PureFunctions/LoginCheck";
+
 
 const Home = ({token, user, setUser }) => {
 
