@@ -65,7 +65,7 @@ const Login = ({ setUser, user }) => {
           placeholder="password"
           required
         />
-        <button className="my-2 btn btn-dark" type="submit">
+        <button className="my-2 btn btndark" type="submit">
           Log in
         </button>
         <a className="text-decoration-none link-dark my-2" href="/signup">
