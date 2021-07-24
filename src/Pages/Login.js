@@ -41,26 +41,26 @@ const Login = ({ setUser, user }) => {
     <div className="login-div">
       <form
         onSubmit={handleSubmit}
-        className="my-5 d-flex flex-column  col-10 col-md-8 mx-auto bg-light p-5"
+        className="my-5 d-flex flex-column  col-10 col-md-8 mx-auto p-5"
       >
-        <label htmlFor="email" className="col-form-label">
+        <label htmlFor="email" className="col-form-label my-2">
           Email
         </label>
         <input
           onChange={(e) => setEmail(e.target.value)}
           name="email"
-          className="my-2"
+          className="my-3"
           type="email"
           placeholder="email"
           required
         />
-        <label htmlFor="password" className="col-form-label">
+        <label htmlFor="password" className="col-form-label my-2">
           Password
         </label>
         <input
           onChange={(e) => setPassword(e.target.value)}
           name="password"
-          className="my-2"
+          className="my-3"
           type="password"
           placeholder="password"
           required
@@ -68,7 +68,7 @@ const Login = ({ setUser, user }) => {
         <button className="my-2 btn btn-dark" type="submit">
           Log in
         </button>
-        <a className="text-decoration-none link-dark" href="/signup">
+        <a className="text-decoration-none link-dark my-2" href="/signup">
           Sign up
         </a>
       </form>
