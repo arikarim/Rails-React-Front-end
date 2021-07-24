@@ -15,7 +15,9 @@ This is prepared React authentication `part of React-Rails authentication` where
 
 
 
-[Live Demo Link]http://arikarim.me/Rails-React-Front-end/)
+Note: This is a demo of this project combined with [React-front](https://github.com/arikarim/React-Rails-Back-End).
+
+[Live Demo Link](http://arikarim.me/Rails-React-Front-end/)
 
 ## Built With
 
