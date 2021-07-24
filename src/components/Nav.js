@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import { logout } from "../PureFunctions/Logout";
 import "./Nav.css";
-const Nav = ({ setUser, user }) => {
+const Nav = ({ setUser}) => {
   const history = useHistory();
 
   const toke = JSON.parse(localStorage.getItem("token"));
@@ -26,11 +26,6 @@ const Nav = ({ setUser, user }) => {
           <li className="mx-3">
             <Link className="text-decoration-none link-light" to="/">
               Home
-            </Link>
-          </li>
-          <li className="mx-3">
-            <Link className="text-decoration-none link-light" to="/dashboard">
-              Dashboard
             </Link>
           </li>
           <li className="mx-3">

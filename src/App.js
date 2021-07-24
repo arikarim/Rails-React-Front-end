@@ -1,10 +1,6 @@
 import axios from "axios";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Login from "./Pages/Login";
-import Nav from "./components/Nav";
-import Signup from "./Pages/Signup";
-import Home from "./components/Home";
+import Routes from "./Routes/Routes";
 
 function App() {
   const [token, setToken] = useState("");
@@ -40,54 +36,7 @@ function App() {
   }, [token, user]);
   return (
     <div>
-      <Router>
-        <Nav user={user} setUser={setUser} />
-        <div className="container">
-          <h1>Status: {user === "Logged" ? "Logged in" : "Not Logged in"}</h1>
-          <Switch>
-            <Route
-              path="/signup"
-              render={(props) => (
-                <Signup
-                  {...props}
-                  user={user}
-                  token={token}
-                  setToken={setToken}
-                  setUser={setUser}
-                />
-              )}
-            />
-            <Route
-              exact
-              path="/login"
-              render={(props) => (
-                <Login {...props} user={user} setUser={setUser} />
-              )}
-            />
-            {/* <Route
-            exact
-            path="/logout"
-            render={(props) => (
-              <Logout
-                {...props}
-                token={token}
-                user={user}
-                setUser={setUser}
-                setToken={setToken}
-              />
-            )}
-          /> */}
-
-            <Route
-              exact
-              path="/"
-              render={(props) => (
-                <Home token={token} {...props} user={user} setUser={setUser} />
-              )}
-            />
-          </Switch>
-        </div>
-      </Router>
+      <Routes user={user} setUser={setUser} />
     </div>
   );
 }

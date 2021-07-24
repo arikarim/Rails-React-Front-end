@@ -8,8 +8,6 @@ const Home = ({ user }) => {
   return (
     <div>
       <h1>Welcome to our website</h1>
-      <p>{user}</p>
-      {/* <button onClick={e =>logout(e)}>log out</button> */}
     </div>
   );
 };
