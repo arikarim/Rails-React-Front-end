@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Routes from "./Routes/Routes";
+import Routes from "../Routes/Routes";
 
 function App() {
   const [token, setToken] = useState("");
