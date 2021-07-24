@@ -15,7 +15,7 @@ This is prepared React authentication `part of React-Rails authentication` where
 
 
 
-Note: This is a demo of this project combined with [Rails-back](https://github.com/arikarim/React-Rails-Back-End).
+Note: This demo of this project combined with [Rails-back](https://github.com/arikarim/React-Rails-Back-End).
 
 [Live Demo Link](http://arikarim.me/Rails-React-Front-end/)
 
@@ -45,7 +45,7 @@ node should be installed in your machine.
 
  - run npm run start
  - 
- - Change axios request links to localhost if your rails is in development or change it to your back-end link if your rails is in production. you can find these links in `App, Login and Signup` components.
+ - Change axios request links to `http://localhost:3000` if your rails is in development or change it to your back-end link if your rails is in production. you can find these links in `App, Login and Signup` components.
 
 **Step 2 Rails Part**<br>
 
@@ -53,11 +53,11 @@ In order to use this project you should have the back end prepared, I will put t
 
 - Clone the Rails repo and cd inside the project.
 
-- Run `Rake secret` and hold it for the next step.
+- Run `Rake secret`, this will generate a secret key, hold it for the next step.
 
 - Create a `.env` file in the root of the project and inside it put this `DEVISE_JWT_SECRET_KEY = < your secret key from previuos step >`
 
-- Inside `config/initializers/cors.rb` if you use it locally you dont need to do this but if you want to use it from specific domain you should change line 12 from `origins '*'` to `origins 'Your domain here'`.
+- Inside `config/initializers/cors.rb` if you use it locally you dont need to do this but if you want to use it from specific domain you should change line 12 from `origins '*'` to `origins 'Your front-end domain here'`.
 
 
 ## 🤝 contributing
