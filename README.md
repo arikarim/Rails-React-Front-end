@@ -44,6 +44,8 @@ node should be installed in your machine.
   - npm install
 
  - run npm run start
+ - 
+ - Change axios request links to localhost if your rails is in development or change it to your back-end link if your rails is in production. you can find these links in `App, Login and Signup` components.
 
 **Step 2 Rails Part**<br>
 
