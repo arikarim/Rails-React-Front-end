@@ -1,9 +1,9 @@
 import axios from "axios";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Login from "./components/Login";
+import Login from "./Pages/Login";
 import Nav from "./components/Nav";
-import Signup from "./components/Signup";
+import Signup from "./Pages/Signup";
 import Home from "./components/Home";
 
 function App() {

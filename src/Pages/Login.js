@@ -1,8 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Redirect, Route, useHistory } from "react-router";
-import {BrowserRouter as Router} from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import { Link } from "react-router-dom";
+import registration from "./registration.css";
 import { checking } from "../PureFunctions/LoginCheck";
 // import { checking, logout } from "../PureFunctions/LoginCheck";
 
@@ -32,38 +33,46 @@ const Login = ({ setUser, user }) => {
       console.log(error);
     }
   };
-  if (user === 'Logged') {
+  if (user === "Logged") {
     return <Redirect to={"/"} />;
   }
 
   return (
-    <Router>
-    <form
-      onSubmit={handleSubmit}
-      className="my-5 d-flex flex-column  col-8 mx-auto"
-    >
-      <label htmlFor="email" className="col-form-label">Email</label>
-      <input
-        onChange={(e) => setEmail(e.target.value)}
-        name="email"
-        className="my-2"
-        type="email"
-        placeholder="email"
-      />
-      <label htmlFor="password" className="col-form-label">Password</label>
-      <input
-        onChange={(e) => setPassword(e.target.value)}
-        name="password"
-        className="my-2"
-        type="password"
-        placeholder="password"
-      />
-      <button className="my-2 btn btn-dark" type="submit">
-        Log in
-      </button>
-      <Link className="text-decoration-none link-dark" to="/signup">Sign Up</Link>
-    </form>
-    </Router>
+    <div className="login-div">
+      <form
+        onSubmit={handleSubmit}
+        className="my-5 d-flex flex-column  col-10 col-md-8 mx-auto bg-light p-5"
+      >
+        <label htmlFor="email" className="col-form-label">
+          Email
+        </label>
+        <input
+          onChange={(e) => setEmail(e.target.value)}
+          name="email"
+          className="my-2"
+          type="email"
+          placeholder="email"
+          required
+        />
+        <label htmlFor="password" className="col-form-label">
+          Password
+        </label>
+        <input
+          onChange={(e) => setPassword(e.target.value)}
+          name="password"
+          className="my-2"
+          type="password"
+          placeholder="password"
+          required
+        />
+        <button className="my-2 btn btn-dark" type="submit">
+          Log in
+        </button>
+        <a className="text-decoration-none link-dark" href="/signup">
+          Sign up
+        </a>
+      </form>
+    </div>
   );
 };
 
