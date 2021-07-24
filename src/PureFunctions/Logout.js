@@ -1,12 +1,11 @@
 import axios from "axios";
+import { Redirect } from "react-router";
 
 export const checking = (user, history) => {
-  user === "Not_Logged"
-    ? history.push("/login")
-    : history.push("/");
+  user === "Not_Logged" ? history.push("/login") : history.push("/");
 };
 
-export const logout = async (setUser, history) => { 
+export const logout = async (setUser, history) => {
   try {
     const toke = JSON.parse(localStorage.getItem("token"));
     const data = await axios.delete(
@@ -19,10 +18,10 @@ export const logout = async (setUser, history) => {
       }
     );
     localStorage.setItem("token", JSON.stringify(""));
-    setUser('Not Logged')
+    setUser("Not Logged");
     history.push("/login");
 
-
+    
   } catch (error) {
     console.log(error);
   }

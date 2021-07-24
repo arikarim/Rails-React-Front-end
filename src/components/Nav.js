@@ -1,31 +1,53 @@
-import axios from "axios";
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import { logout } from "../PureFunctions/Logout";
-import './Nav.css'
-const Nav = ({setUser, user}) => {
+import "./Nav.css";
+const Nav = ({ setUser, user }) => {
   const history = useHistory();
+
+  const toke = JSON.parse(localStorage.getItem("token"));
   return (
     <nav className="">
-      {user === 'Not_Logged' ? (
+      {toke === '' ? (
         <ul className="list-unstyled d-flex py-3 justify-content-end">
           <li className="mx-3">
-            <Link className="text-decoration-none link-light" to="/signup">Sign Up</Link>
+            <Link className="text-decoration-none link-light" to="/signup">
+              Sign Up
+            </Link>
           </li>
+          {user}
           <li className="mx-3">
-            <Link className="text-decoration-none link-light" to="/login">Login</Link>
+            <Link className="text-decoration-none link-light" to="/login">
+              Login
+            </Link>
           </li>
         </ul>
       ) : (
         <ul className="list-unstyled d-flex py-3 justify-content-end">
+          {user}
           <li className="mx-3">
-            <Link className="text-decoration-none link-light" to="/">Home</Link>
+            <Link className="text-decoration-none link-light" to="/">
+              Home
+            </Link>
           </li>
           <li className="mx-3">
-            <Link className="text-decoration-none link-light" to="/dashboard">Dashboard</Link>
+            <Link className="text-decoration-none link-light" to="/">
+              {user}
+            </Link>
           </li>
           <li className="mx-3">
-            <button className="logout-btn" type="submit" onClick={(e) => logout(setUser, history)}>Log out</button>
+            <Link className="text-decoration-none link-light" to="/dashboard">
+              Dashboard
+            </Link>
+          </li>
+          <li className="mx-3">
+            <button
+              className="logout-btn"
+              type="submit"
+              onClick={(e) => logout(setUser, history)}
+            >
+              Log out
+            </button>
           </li>
         </ul>
       )}
