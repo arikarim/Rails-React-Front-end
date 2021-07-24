@@ -4,7 +4,6 @@ import { Redirect, Route, useHistory } from "react-router";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./registration.css";
-import { checking } from "../PureFunctions/Logout";
 // import { checking, logout } from "../PureFunctions/LoginCheck";
 
 const Login = ({ setUser, user }) => {
