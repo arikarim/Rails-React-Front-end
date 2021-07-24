@@ -15,7 +15,7 @@ This is prepared React authentication `part of React-Rails authentication` where
 
 
 
-[Live Demo Link](https://60d9c0abccc45700086d7eec--epic-kilby-a23fc8.netlify.app/)
+[Live Demo Link]http://arikarim.me/Rails-React-Front-end/)
 
 ## Built With
 
