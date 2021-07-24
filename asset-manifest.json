@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Rails-React-Front-end/static/css/main.07361ff9.chunk.css",
+    "main.js": "/Rails-React-Front-end/static/js/main.d6057456.chunk.js",
+    "main.js.map": "/Rails-React-Front-end/static/js/main.d6057456.chunk.js.map",
+    "runtime-main.js": "/Rails-React-Front-end/static/js/runtime-main.7eee3be1.js",
+    "runtime-main.js.map": "/Rails-React-Front-end/static/js/runtime-main.7eee3be1.js.map",
+    "static/js/2.c13acfd6.chunk.js": "/Rails-React-Front-end/static/js/2.c13acfd6.chunk.js",
+    "static/js/2.c13acfd6.chunk.js.map": "/Rails-React-Front-end/static/js/2.c13acfd6.chunk.js.map",
+    "static/js/3.99483c79.chunk.js": "/Rails-React-Front-end/static/js/3.99483c79.chunk.js",
+    "static/js/3.99483c79.chunk.js.map": "/Rails-React-Front-end/static/js/3.99483c79.chunk.js.map",
+    "index.html": "/Rails-React-Front-end/index.html",
+    "static/css/main.07361ff9.chunk.css.map": "/Rails-React-Front-end/static/css/main.07361ff9.chunk.css.map",
+    "static/js/2.c13acfd6.chunk.js.LICENSE.txt": "/Rails-React-Front-end/static/js/2.c13acfd6.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7eee3be1.js",
+    "static/js/2.c13acfd6.chunk.js",
+    "static/css/main.07361ff9.chunk.css",
+    "static/js/main.d6057456.chunk.js"
+  ]
+}
