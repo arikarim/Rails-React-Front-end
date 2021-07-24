@@ -1,6 +1,6 @@
 # React-Rails Authentication Front-End
 <p align="center">
-    <img src="src/images/react.png" alt="Logo" width="80" height="80">
+    <img src="src/images/react.png" alt="Logo" width="150" height="100">
   <h3 align="center">React-Rails --> [React]</h3>
 
   <p align="center">
