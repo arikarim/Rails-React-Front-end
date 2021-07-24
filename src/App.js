@@ -5,7 +5,6 @@ import Login from "./components/Login";
 import Nav from "./components/Nav";
 import Signup from "./components/Signup";
 import Home from "./components/Home";
-import Logout from "./components/Logout";
 
 function App() {
   const [token, setToken] = useState("");
@@ -50,6 +49,7 @@ function App() {
             render={(props) => (
               <Signup
                 {...props}
+                user={user}
                 token={token}
                 setToken={setToken}
                 setUser={setUser}

@@ -1,11 +1,14 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { useHistory } from "react-router";
+import { Redirect, useHistory } from "react-router";
 
-const Signup = ({ setUser }) => {
+const Signup = ({ user, setUser }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
+  if (user === 'Logged') {
+    return <Redirect to={"/"} />;
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,9 +26,7 @@ const Signup = ({ setUser }) => {
       data.data.message === "Signed up sucessfully."
         ? setUser("Logged")
         : setUser("Not Logged");
-      // data.data.message === "You are logged in."
-      //   ? history.goBack()
-      //   : history.push("/login");
+        history.push("/");
     } catch (error) {
       console.log(error);
     }

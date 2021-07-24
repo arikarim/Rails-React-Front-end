@@ -1,37 +1,10 @@
 import axios from "axios";
-import React, { useEffect } from "react";
-import { Link, Redirect, useHistory } from "react-router-dom";
-import { checking, logout } from "../PureFunctions/LoginCheck";
+import React from "react";
+import { Link, useHistory } from "react-router-dom";
+import { logout } from "../PureFunctions/LoginCheck";
 
 const Nav = ({setUser, user}) => {
   const history = useHistory();
-  const logout = async (e,setUser) => { 
-    try {
-      const toke = JSON.parse(localStorage.getItem("token"));
-      const data = await axios.delete(
-        "https://afternoon-coast-71095.herokuapp.com/users/sign_out",
-        {
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: toke,
-          },
-        }
-      );
-      console.log(data.data.message);
-      localStorage.setItem("token", JSON.stringify(""));
-      setUser('Not Logged')
-      console.log(user);
-      // if (data.data.message !== 'You are logged out.') {
-      //   return <Redirect to={"/login"} />;
-      // }
-      history.push("/login");
-
-
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   return (
     <nav className="bg-dark">
       {user === 'Not_Logged' ? (
@@ -52,7 +25,7 @@ const Nav = ({setUser, user}) => {
             <Link className="text-decoration-none link-light" to="/dashboard">Dashboard</Link>
           </li>
           <li className="mx-3">
-            <button type="submit" onClick={(e) => logout(e, setUser)}>Log out</button>
+            <button type="submit" onClick={(e) => logout(setUser, history)}>Log out</button>
           </li>
         </ul>
       )}
