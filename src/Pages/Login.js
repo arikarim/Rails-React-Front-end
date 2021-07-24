@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Redirect, Route, useHistory } from "react-router";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Link } from "react-router-dom";
-import registration from "./registration.css";
+import "./registration.css";
 import { checking } from "../PureFunctions/LoginCheck";
 // import { checking, logout } from "../PureFunctions/LoginCheck";
 

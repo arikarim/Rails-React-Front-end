@@ -1,12 +1,13 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Redirect, useHistory } from "react-router";
+import "./registration.css";
 
 const Signup = ({ user, setUser }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
-  if (user === 'Logged') {
+  if (user === "Logged") {
     return <Redirect to={"/"} />;
   }
 
@@ -26,7 +27,7 @@ const Signup = ({ user, setUser }) => {
       data.data.message === "Signed up sucessfully."
         ? setUser("Logged")
         : setUser("Not Logged");
-        history.push("/");
+      history.push("/");
     } catch (error) {
       console.log(error);
     }
