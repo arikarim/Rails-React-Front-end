@@ -26,7 +26,7 @@ const Routes = ({ user, setUser }) => {
                 <Login {...props} user={user} setUser={setUser} />
               )}
             />
-            <Route exact path="/" render={(props) => <Home {...props} />} />
+            <Route path="/" render={(props) => <Home {...props} />} />
           </Switch>
         </div>
       </Router>
