@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Home from '../Pages/Home';
-import Nav from '../Pages/Nav';
-import Login from '../Pages/Login';
-import Signup from '../Pages/Signup';
+import Home from "../Pages/Home";
+import Nav from "../Pages/Nav";
+import Login from "../Pages/Login";
+import Signup from "../Pages/Signup";
 
-const Routes = ({user, setUser}) => {
+const Routes = ({ user, setUser }) => {
   return (
     <div>
       <Router>
@@ -26,16 +26,12 @@ const Routes = ({user, setUser}) => {
                 <Login {...props} user={user} setUser={setUser} />
               )}
             />
-            <Route
-              exact
-              path="/"
-              render={(props) => <Home {...props} user={user} />}
-            />
+            <Route exact path="/" render={(props) => <Home {...props} />} />
           </Switch>
         </div>
       </Router>
     </div>
-  )
-}
+  );
+};
 
-export default Routes
+export default Routes;

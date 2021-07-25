@@ -1,8 +1,9 @@
 import React from "react";
 import { Redirect } from "react-router";
 
-const Home = ({ user }) => {
-  if (user === "Not_Logged") {
+const Home = () => {
+  const toke = JSON.parse(localStorage.getItem("token"));
+  if (toke === "") {
     return <Redirect to={"/login"} />;
   }
   return (
