@@ -16,6 +16,8 @@ This is prepared React authentication `part of React-Rails authentication` where
 
 
 Note: This demo of this project combined with [Rails-back](https://github.com/arikarim/React-Rails-Back-End).
+And also note that the live demo may not work well on github pages as react-router have some problems on reloading.
+to solve thisb you can upload it to heroku or any other hosts.
 
 [Live Demo Link](http://arikarim.me/Rails-React-Front-end/)
 
