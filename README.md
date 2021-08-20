@@ -19,7 +19,7 @@ Note: This demo of this project combined with [Rails-back](https://github.com/ar
 And also note that the live demo may not work well on github pages as react-router have some problems on reloading.
 to solve thisb you can upload it to heroku or any other hosts.
 
-[Live Demo Link](http://arikarim.me/Rails-React-Front-end/)
+[Live Demo Link](http://arikarim.github.io/Rails-React-Front-end/)
 
 ## Built With
 
